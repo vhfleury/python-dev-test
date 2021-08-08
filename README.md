@@ -32,17 +32,18 @@ airflow users create \
 ## dags
 - criar uma pasta com o nome dags dentro da pasta airflow
 - copiar o arquivo popula.py para dentro do pasta dags
-- rodar o scripts bd.py dentro da pasta scripts
-
+- rodar o scripts bd.py dentro da pasta scripts 
 ```console
 source .env/bin/activate
 python3 bd.py
 ```
+- rodar o jupyter notebook tratamento dados.ipynb
+
 - rodar o script de tratamento de dados
 
 ```console
 source .env/bin/activate
-python3 tratamento.py
+jupyter notebook --port 8895
 ```
 
 

@@ -26,7 +26,6 @@ def verifica_arquivo():
     if parar:
         dag = DAG("popula_bd", schedule_interval=None, start_date = datetime.now())
 
-        
 def percorre_df(quantidade):
     """puxa os dados do dataframe adult e popula banco de dados """
 
@@ -46,7 +45,6 @@ def percorre_df(quantidade):
     
     df.drop(index=[n for n in range(quantidade)], inplace=True)
     df.to_csv(arquivo, index=False)
-        
         
 default_args = {
     'owner': 'victor hugo',
