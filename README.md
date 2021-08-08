@@ -1,6 +1,5 @@
-## instrucoes
-
-<!-- start -->
+## instalação
+# Mac OS / Linux:
 
 ```console
 
@@ -9,16 +8,21 @@ source .env/bin/activate
 export AIRFLOW_HOME=$(pwd)/airflow
 pip install apache-airflow==2.1.2
 airflow db init
+
 ```
 
 # criacao de conta
+
+```console
 
 airflow users create \
     --username admin \
     --firstname victor \
     --lastname barreto \
     --role Admin \
-    --email vh15fleury
+    --email vh15fleury@hotmail.com
+
+```
 
 airflow webserver --port 8080
 

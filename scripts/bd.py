@@ -1,21 +1,20 @@
 import sqlite3
 from sqlite3 import Error
 
-def criando_conexao(path = "data/teste.db" ):
-    """create a database connection to a SQLite database"""
+# def criando_conexao(path =  ):
+#     """create a database connection to a SQLite database"""
     
-    conn = None
-    try:
-        conn = sqlite3.connect(path)
+#     conn = None
+#     try:
+#         conn = sqlite3.connect(path)
         
-    except Error as e:
-        print(e)
+#     except Error as e:
+#         print(e)
             
-    return conn
+#     return conn
 
 def criando_tabela():
-    
-    """criando tabela"""
+    """criando tabela adult"""
 
     colunas =   ["ID_adult integer PRIMARY KEY AUTOINCREMENT",
                 'age TINYINT',
@@ -34,15 +33,15 @@ def criando_tabela():
                 'native_country VARCHAR(27)',
                 'class VARCHAR(7)']
     
-    s = "CREATE TABLE adult ("
     
+    query = "CREATE TABLE adult ("
     for col in colunas:
-        s = s + col + ", "
-    s = s[:-2] + ")"
+        query = query + col + ", "
+    query = query[:-2] + ")"
         
-    mydb = criando_conexao()
+    mydb = sqlite3.connect("data/adult.db")
     mycursor = mydb.cursor()
-    mycursor.execute(s)
+    mycursor.execute(query)
     mydb.commit()
     mycursor.close()
     
