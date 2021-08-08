@@ -1,0 +1,23 @@
+[2021-08-08 16:56:58,792] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: popula_bd.verifica_arquivo 2021-08-08T19:56:46.106773+00:00 [queued]>
+[2021-08-08 16:56:58,795] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: popula_bd.verifica_arquivo 2021-08-08T19:56:46.106773+00:00 [queued]>
+[2021-08-08 16:56:58,795] {taskinstance.py:1087} INFO - 
+--------------------------------------------------------------------------------
+[2021-08-08 16:56:58,795] {taskinstance.py:1088} INFO - Starting attempt 1 of 2
+[2021-08-08 16:56:58,795] {taskinstance.py:1089} INFO - 
+--------------------------------------------------------------------------------
+[2021-08-08 16:56:58,800] {taskinstance.py:1107} INFO - Executing <Task(PythonOperator): verifica_arquivo> on 2021-08-08T19:56:46.106773+00:00
+[2021-08-08 16:56:58,801] {standard_task_runner.py:52} INFO - Started process 15504 to run task
+[2021-08-08 16:56:58,803] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'popula_bd', 'verifica_arquivo', '2021-08-08T19:56:46.106773+00:00', '--job-id', '54', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/popula.py', '--cfg-path', '/tmp/tmpo8ozydhv', '--error-file', '/tmp/tmpbolahqey']
+[2021-08-08 16:56:58,803] {standard_task_runner.py:77} INFO - Job 54: Subtask verifica_arquivo
+[2021-08-08 16:56:58,814] {logging_mixin.py:104} INFO - Running <TaskInstance: popula_bd.verifica_arquivo 2021-08-08T19:56:46.106773+00:00 [running]> on host DESKTOP-BEFA8CP.localdomain
+[2021-08-08 16:56:58,828] {taskinstance.py:1300} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=vh15fleury@hotmail.com
+AIRFLOW_CTX_DAG_OWNER=victor hugo
+AIRFLOW_CTX_DAG_ID=popula_bd
+AIRFLOW_CTX_TASK_ID=verifica_arquivo
+AIRFLOW_CTX_EXECUTION_DATE=2021-08-08T19:56:46.106773+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-08-08T19:56:46.106773+00:00
+[2021-08-08 16:56:58,864] {taskinstance.py:1170} INFO - Marking task as SKIPPED. dag_id=popula_bd, task_id=verifica_arquivo, execution_date=20210808T195646, start_date=20210808T195658, end_date=
+[2021-08-08 16:56:58,864] {taskinstance.py:1204} INFO - Marking task as SUCCESS. dag_id=popula_bd, task_id=verifica_arquivo, execution_date=20210808T195646, start_date=20210808T195658, end_date=20210808T195658
+[2021-08-08 16:56:58,874] {taskinstance.py:1265} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2021-08-08 16:56:58,894] {local_task_job.py:149} INFO - Task exited with return code 0

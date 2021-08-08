@@ -34,7 +34,7 @@ def criando_tabela():
                 'class VARCHAR(7)']
     
     
-    query = "CREATE TABLE adult ("
+    query = "CREATE TABLE adult("
     for col in colunas:
         query = query + col + ", "
     query = query[:-2] + ")"
@@ -48,5 +48,4 @@ def criando_tabela():
     print("tabela adult criada")    
 
 if __name__ == '__main__':
-    criando_conexao()
     criando_tabela()

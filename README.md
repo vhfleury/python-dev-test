@@ -1,5 +1,10 @@
-## instalação
-# Mac OS / Linux:
+# requisitos
+
+- python 3.8.10
+- airflow 2.1.2
+
+# instalação
+## Mac OS / Linux:
 
 ```console
 
@@ -11,10 +16,9 @@ airflow db init
 
 ```
 
-# criacao de conta
+## criação de conta airflow
 
 ```console
-
 airflow users create \
     --username admin \
     --firstname victor \
@@ -24,35 +28,66 @@ airflow users create \
 
 ```
 
-airflow webserver --port 8080
+# passo a passo
+## dags
+- criar uma pasta com o nome dags dentro da pasta airflow
+- copiar o arquivo popula.py para dentro do pasta dags
+- rodar o scripts bd.py dentro da pasta scripts
 
-<!-- outro bash -->
+```console
+source .env/bin/activate
+python3 bd.py
+```
+- rodar o script de tratamento de dados
+
+```console
+source .env/bin/activate
+python3 tratamento.py
+```
+
+
+
+## ativando o airflow
+``` console
+source .env/bin/activate
+export AIRFLOW_HOME=$(pwd)/airflow
+airflow webserver --port 8080
+```
+
+## ativando o airflow scheduler
+``` console
 source .env/bin/activate
 export AIRFLOW_HOME=$(pwd)/airflow
 airflow scheduler
+```
 
-<!-- outro bash -->
+## abrindo o jupyter notebook
+``` console
 jupyter notebook --port 8895
+```
 
+# dags
+criar uma pasta com o nome dags dentro da pasta airflow
+copiar o arquivo popula.py para dentro do pasta dags
 
-# instrutura
+# tratamento dos dados
 
-arquivo bd.py cria a tabela no sqlite e a tabela
+utilizei o jupyter notebook pra poder explorar e tratar os dados
 
-arquivo tratamento.py trata os dados
-
-
-
-
-<!-- pip install -r requerimentos.txt -->
-<!-- para usar o jupyter lab, primeiro devemos definir o path -->
-<!-- export PATH="$HOME/.local/bin:$PATH" -->
 
 
 
 
 
 alterei - por _ nos nomes de colunas, pois o sql nao aceita
+
+
+
+
+
+# sujestao 
+
+- alterar o tipo das colunas sex e 
 
 
 # Desafio - Dev Python
