@@ -1,3 +1,56 @@
+## instrucoes
+
+<!-- start -->
+
+```console
+
+python3 -m venv .env
+source .env/bin/activate
+export AIRFLOW_HOME=$(pwd)/airflow
+pip install apache-airflow==2.1.2
+airflow db init
+```
+
+# criacao de conta
+
+airflow users create \
+    --username admin \
+    --firstname victor \
+    --lastname barreto \
+    --role Admin \
+    --email vh15fleury
+
+airflow webserver --port 8080
+
+<!-- outro bash -->
+source .env/bin/activate
+export AIRFLOW_HOME=$(pwd)/airflow
+airflow scheduler
+
+<!-- outro bash -->
+jupyter notebook --port 8895
+
+
+# instrutura
+
+arquivo bd.py cria a tabela no sqlite e a tabela
+
+arquivo tratamento.py trata os dados
+
+
+
+
+<!-- pip install -r requerimentos.txt -->
+<!-- para usar o jupyter lab, primeiro devemos definir o path -->
+<!-- export PATH="$HOME/.local/bin:$PATH" -->
+
+
+
+
+
+alterei - por _ nos nomes de colunas, pois o sql nao aceita
+
+
 # Desafio - Dev Python
 
 Este repositório possui um teste que visa avaliar sua curiosidade, seus conhecimentos em Python, análise e limpeza de dados, Storytelling e conceitos relacionados a processos ETL/ELT. O teste possui seu próprio conjunto de arquivos, parâmetros, instruções e estratégias para ser resolvido. Portanto, estude cada detalhe com sabedoria.

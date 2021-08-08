@@ -1,0 +1,5 @@
+.env
+scripts/.*
+scripts/_*
+
+teste.py

@@ -1,0 +1,23 @@
+[2021-08-06 21:51:32,577] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: popula_bd.popula_adult 2021-08-07T00:51:20.731038+00:00 [queued]>
+[2021-08-06 21:51:32,579] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: popula_bd.popula_adult 2021-08-07T00:51:20.731038+00:00 [queued]>
+[2021-08-06 21:51:32,579] {taskinstance.py:1087} INFO - 
+--------------------------------------------------------------------------------
+[2021-08-06 21:51:32,579] {taskinstance.py:1088} INFO - Starting attempt 1 of 1
+[2021-08-06 21:51:32,579] {taskinstance.py:1089} INFO - 
+--------------------------------------------------------------------------------
+[2021-08-06 21:51:32,584] {taskinstance.py:1107} INFO - Executing <Task(PythonOperator): popula_adult> on 2021-08-07T00:51:20.731038+00:00
+[2021-08-06 21:51:32,585] {standard_task_runner.py:52} INFO - Started process 4123 to run task
+[2021-08-06 21:51:32,586] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'popula_bd', 'popula_adult', '2021-08-07T00:51:20.731038+00:00', '--job-id', '525', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/popula.py', '--cfg-path', '/tmp/tmpfvqg8ob1', '--error-file', '/tmp/tmpmv9_c80x']
+[2021-08-06 21:51:32,587] {standard_task_runner.py:77} INFO - Job 525: Subtask popula_adult
+[2021-08-06 21:51:32,596] {logging_mixin.py:104} INFO - Running <TaskInstance: popula_bd.popula_adult 2021-08-07T00:51:20.731038+00:00 [running]> on host DESKTOP-BEFA8CP.localdomain
+[2021-08-06 21:51:32,610] {taskinstance.py:1300} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=vh15fleury@hotmail.com
+AIRFLOW_CTX_DAG_OWNER=victor hugo
+AIRFLOW_CTX_DAG_ID=popula_bd
+AIRFLOW_CTX_TASK_ID=popula_adult
+AIRFLOW_CTX_EXECUTION_DATE=2021-08-07T00:51:20.731038+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-08-07T00:51:20.731038+00:00
+[2021-08-06 21:51:32,617] {python.py:151} INFO - Done. Returned value was: None
+[2021-08-06 21:51:32,618] {taskinstance.py:1204} INFO - Marking task as SUCCESS. dag_id=popula_bd, task_id=popula_adult, execution_date=20210807T005120, start_date=20210807T005132, end_date=20210807T005132
+[2021-08-06 21:51:32,624] {taskinstance.py:1265} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2021-08-06 21:51:32,638] {local_task_job.py:149} INFO - Task exited with return code 0
