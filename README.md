@@ -7,13 +7,11 @@
 ## Mac OS / Linux:
 
 ```console
-
 python3 -m venv .env
 source .env/bin/activate
 export AIRFLOW_HOME=$(pwd)/airflow
 pip install apache-airflow==2.1.2
 airflow db init
-
 ```
 
 ## criação de conta airflow
@@ -29,58 +27,35 @@ airflow users create \
 ```
 
 # passo a passo
-## dags
-- criar uma pasta com o nome dags dentro da pasta airflow
-- copiar o arquivo popula.py para dentro do pasta dags
-- rodar o scripts bd.py dentro da pasta scripts 
-```console
-source .env/bin/activate
-python3 bd.py
-```
-- rodar o jupyter notebook tratamento dados.ipynb
 
-- rodar o script de tratamento de dados
-
+1. criar uma pasta com o nome dags dentro da pasta airflow
+2. copiar o arquivo popula.py para dentro do pasta dags
+3. rodar o jupyter notebook tratamento dados.ipynb e rodar todas as celulas (deixei todos os comentarios dentro do notebook)
 ```console
 source .env/bin/activate
 jupyter notebook --port 8895
 ```
-
-
-
-## ativando o airflow
+4. rodar o scripts bd.py dentro da pasta scripts 
+```console
+source .env/bin/activate
+python3 bd.py
+```
+5. iniciar airflow webserver
 ``` console
 source .env/bin/activate
 export AIRFLOW_HOME=$(pwd)/airflow
 airflow webserver --port 8080
 ```
-
-## ativando o airflow scheduler
+6. iniciar o airflow scheduler
 ``` console
 source .env/bin/activate
 export AIRFLOW_HOME=$(pwd)/airflow
 airflow scheduler
 ```
-
-## abrindo o jupyter notebook
-``` console
-jupyter notebook --port 8895
-```
-
-# dags
-criar uma pasta com o nome dags dentro da pasta airflow
-copiar o arquivo popula.py para dentro do pasta dags
-
-# tratamento dos dados
-
-utilizei o jupyter notebook pra poder explorar e tratar os dados
+7. na interface do airflow, ativar a dag *popula_bd*, quando terminar de inserir todos os registros no banco de dados, a dag ira parar
 
 
 
-
-
-
-alterei - por _ nos nomes de colunas, pois o sql nao aceita
 
 
 

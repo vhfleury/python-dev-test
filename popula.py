@@ -5,7 +5,6 @@ from sqlite3 import Error
 from airflow import DAG
 import pandas as pd
 
-
 def verifica_arquivo():
     """verifica se o DataFrame adult esta vazio, se sim, exclui"""
     
@@ -48,8 +47,7 @@ def percorre_df(quantidade):
         
 default_args = {
     'owner': 'victor hugo',
-    "email": ['vh15fleury@hotmail.com'],
-    'retries': 1,
+    "email": ['vh15fleury@hotmail.com']
     }
 
 with DAG(

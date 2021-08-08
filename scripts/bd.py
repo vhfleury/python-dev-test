@@ -15,7 +15,8 @@ from sqlite3 import Error
 
 def criando_tabela():
     """criando tabela adult"""
-
+    # alterei - por _ nos nomes de colunas, pois o sql nao aceita
+    
     colunas =   ["ID_adult integer PRIMARY KEY AUTOINCREMENT",
                 'age TINYINT',
                 'workclass VARCHAR(17)',
