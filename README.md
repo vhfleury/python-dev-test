@@ -5,6 +5,7 @@
 - matplotlib 3.4.2
 - sklearn
 - statsmodels
+- jupyter notebook
 
 # instalação
 ## Mac OS / Linux:
@@ -20,7 +21,7 @@ sudo apt-get install python3-statsmodels
 airflow db init
 ```
 
-## criação de conta airflow
+## Criação de conta airflow
 
 ```console
 airflow users create \
@@ -32,7 +33,7 @@ airflow users create \
 
 ```
 
-# passo a passo
+# Passo a passo
 
 1. criar uma pasta com o nome dags dentro da pasta airflow
 2. copiar o arquivo popula.py para dentro do pasta dags
@@ -60,15 +61,7 @@ export AIRFLOW_HOME=$(pwd)/airflow
 airflow scheduler
 ```
 8. na interface do airflow, ativar a dag *popula_bd*, quando terminar de inserir todos os registros no banco de dados, a dag ira parar
-
-
-
-# analise exploratoria
-
-
-# sujestao bando de dados
-- alterar o tipo das colunas sex e  para bool
-- alterar o tipo e a descricao das colunas
+9. analise exploratorio se encontra no arquivo *analise_exploratoria.ipynb*
 
 
 # Desafio - Dev Python
