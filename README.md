@@ -3,18 +3,20 @@
 - python 3.8.10
 - airflow 2.1.2
 - matplotlib 3.4.2
+- sklearn
+- statsmodels
+
 # instalação
 ## Mac OS / Linux:
 
 ```console
 python3 -m venv .env
 source .env/bin/activate
-sudo apt-get install python3-matplotlib
 export AIRFLOW_HOME=$(pwd)/airflow
 pip install apache-airflow==2.1.2
+sudo apt-get install python3-matplotlib
 sudo apt-get install python3-sklearn
 sudo apt-get install python3-statsmodels
-
 airflow db init
 ```
 
@@ -34,7 +36,7 @@ airflow users create \
 
 1. criar uma pasta com o nome dags dentro da pasta airflow
 2. copiar o arquivo popula.py para dentro do pasta dags
-3. alterar o path dentro do arquivo popula.py
+3. alterar o path dentro do arquivo popula.py (linha 9 )
 4. rodar o jupyter notebook tratamento dados.ipynb e rodar todas as celulas (deixei todos os comentarios dentro do notebook)
 ```console
 source .env/bin/activate
@@ -43,7 +45,7 @@ jupyter notebook --port 8895
 5. rodar o scripts bd.py dentro da pasta scripts 
 ```console
 source .env/bin/activate
-python3 bd.py
+python3 scripts/bd.py
 ```
 6. iniciar airflow webserver
 ``` console

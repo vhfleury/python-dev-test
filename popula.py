@@ -6,12 +6,12 @@ from airflow import DAG
 import pandas as pd
 import os
 
+PATH = "/home/churebas/projetos/python-dev-test/data/"
+
 def verifica_arquivo():
     """verifica se o DataFrame adult esta vazio, se sim, exclui"""
     
-    path = "/home/churebas/projetos/python-dev-test/data/"
-    
-    arquivo = path + "adult.csv"
+    arquivo = PATH + "adult.csv"
     
     if os.path.isfile(arquivo):
         df = pd.read_csv(arquivo)
@@ -32,19 +32,18 @@ def verifica_arquivo():
 def percorre_df(quantidade):
     """puxa os dados do dataframe adult e popula banco de dados """
 
-    path = "/home/churebas/projetos/python-dev-test/data/"
+    # path = "/home/churebas/projetos/python-dev-test/data/"
     
-    arquivo = path + "adult.csv"
+    arquivo = PATH + "adult.csv"
     df = pd.read_csv(arquivo)
 
     if quantidade > df.shape[0]:
         quantidade = df.shape[0]
 
-    usar = df.iloc[:quantidade]
+    usar_df = df.iloc[:quantidade]
     
-    coon = sqlite3.connect(path + "adult.db")
-    usar.to_sql("adult", coon, index=False, if_exists="append")
-
+    coon = sqlite3.connect(PATH + "adult.db")
+    usar_df.to_sql("adult", coon, index=False, if_exists="append")
     
     df.drop(index=[n for n in range(quantidade)], inplace=True)
     df.to_csv(arquivo, index=False)
