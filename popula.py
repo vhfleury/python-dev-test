@@ -31,8 +31,6 @@ def verifica_arquivo():
 
 def percorre_df(quantidade):
     """puxa os dados do dataframe adult e popula banco de dados """
-
-    # path = "/home/churebas/projetos/python-dev-test/data/"
     
     arquivo = PATH + "adult.csv"
     df = pd.read_csv(arquivo)

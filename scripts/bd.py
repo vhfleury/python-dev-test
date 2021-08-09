@@ -1,18 +1,6 @@
 import sqlite3
 from sqlite3 import Error
 
-# def criando_conexao(path =  ):
-#     """create a database connection to a SQLite database"""
-    
-#     conn = None
-#     try:
-#         conn = sqlite3.connect(path)
-        
-#     except Error as e:
-#         print(e)
-            
-#     return conn
-
 def criando_tabela():
     """criando tabela adult"""
     # alterei - por _ nos nomes de colunas, pois o sql nao aceita
