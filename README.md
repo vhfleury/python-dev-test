@@ -2,15 +2,19 @@
 
 - python 3.8.10
 - airflow 2.1.2
-
+- matplotlib 3.4.2
 # instalação
 ## Mac OS / Linux:
 
 ```console
 python3 -m venv .env
 source .env/bin/activate
+sudo apt-get install python3-matplotlib
 export AIRFLOW_HOME=$(pwd)/airflow
 pip install apache-airflow==2.1.2
+sudo apt-get install python3-sklearn
+sudo apt-get install python3-statsmodels
+
 airflow db init
 ```
 
@@ -30,40 +34,39 @@ airflow users create \
 
 1. criar uma pasta com o nome dags dentro da pasta airflow
 2. copiar o arquivo popula.py para dentro do pasta dags
-3. rodar o jupyter notebook tratamento dados.ipynb e rodar todas as celulas (deixei todos os comentarios dentro do notebook)
+3. alterar o path dentro do arquivo popula.py
+4. rodar o jupyter notebook tratamento dados.ipynb e rodar todas as celulas (deixei todos os comentarios dentro do notebook)
 ```console
 source .env/bin/activate
 jupyter notebook --port 8895
 ```
-4. rodar o scripts bd.py dentro da pasta scripts 
+5. rodar o scripts bd.py dentro da pasta scripts 
 ```console
 source .env/bin/activate
 python3 bd.py
 ```
-5. iniciar airflow webserver
+6. iniciar airflow webserver
 ``` console
 source .env/bin/activate
 export AIRFLOW_HOME=$(pwd)/airflow
 airflow webserver --port 8080
 ```
-6. iniciar o airflow scheduler
+7. iniciar o airflow scheduler
 ``` console
 source .env/bin/activate
 export AIRFLOW_HOME=$(pwd)/airflow
 airflow scheduler
 ```
-7. na interface do airflow, ativar a dag *popula_bd*, quando terminar de inserir todos os registros no banco de dados, a dag ira parar
+8. na interface do airflow, ativar a dag *popula_bd*, quando terminar de inserir todos os registros no banco de dados, a dag ira parar
 
 
 
+# analise exploratoria
 
 
-
-
-
-# sujestao 
-
-- alterar o tipo das colunas sex e 
+# sujestao bando de dados
+- alterar o tipo das colunas sex e  para bool
+- alterar o tipo e a descricao das colunas
 
 
 # Desafio - Dev Python

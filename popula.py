@@ -4,6 +4,7 @@ import random, time, sqlite3, os
 from sqlite3 import Error
 from airflow import DAG
 import pandas as pd
+import os
 
 def verifica_arquivo():
     """verifica se o DataFrame adult esta vazio, se sim, exclui"""
@@ -20,10 +21,13 @@ def verifica_arquivo():
             parar = True
         else:
             parar = False
-    parar = True
+    else:
+        parar = True
 
     if parar:
-        dag = DAG("popula_bd", schedule_interval=None, start_date = datetime.now())
+        os.system("export AIRFLOW_HOME=$(pwd)/airflow")
+        os.system("airflow dags pause popula_bd")
+        print("parou")
 
 def percorre_df(quantidade):
     """puxa os dados do dataframe adult e popula banco de dados """
@@ -47,7 +51,8 @@ def percorre_df(quantidade):
         
 default_args = {
     'owner': 'victor hugo',
-    "email": ['vh15fleury@hotmail.com']
+    "email": ['vh15fleury@hotmail.com'],
+    'retries': 1,
     }
 
 with DAG(
